@@ -1,0 +1,84 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    route: string;
+}
+
+const { route } = Astro.props as Props;
+
+interface NavBarItem {
+    icon: string;
+    label: string;
+    url: string;
+    bottom?: boolean;
+    disabled?: boolean;
+}
+
+const navBarList: NavBarItem[] = [
+    { icon: "tabler:home", label: "首页", url: "/" },
+    { icon: "tabler:tag", label: "标签", url: "/tag", disabled: true },
+    {
+        icon: "tabler:archive",
+        label: "归档",
+        url: "/archive",
+        disabled: true,
+    },
+    {
+        icon: "tabler:git-fork",
+        label: "时光轴",
+        url: "/timeline",
+        disabled: true,
+    },
+    {
+        icon: "tabler:message-circle",
+        label: "留言",
+        url: "/message",
+        disabled: true,
+    },
+    {
+        icon: "tabler:article",
+        label: "文章",
+        url: "/post",
+        bottom: true,
+        disabled: true,
+    },
+    {
+        icon: "tabler:settings",
+        label: "设置",
+        url: "/settings",
+        disabled: true,
+    },
+];
+---
+
+<div
+    id="iconbar"
+    class="w-14 bg-iconbar-bg text-iconbar-dimmed flex flex-col items-stretch text-xs font-bold"
+>
+    {
+        navBarList.map((item) => (
+            <a
+                href={item.disabled ? undefined : item.url}
+                class:list={[
+                    "flex flex-col items-center py-2",
+                    {
+                        "text-iconbar-highlight": item.url === route,
+                    },
+                    { "border-l-2": item.url === route },
+                    { "mt-auto": item.bottom },
+                    { "cursor-not-allowed": item.disabled },
+                ]}
+            >
+                <Icon name={item.icon} size="26" />
+                <span>{item.label}</span>
+            </a>
+        ))
+    }
+</div>
+
+<style>
+    :global(#iconbar path) {
+        stroke-width: 1.5;
+    }
+</style>
