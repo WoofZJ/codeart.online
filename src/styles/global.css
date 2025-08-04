@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme inline {
+    --color-editor-bg: var(--editor-bg);
+    --color-titlebar-bg: var(--titlebar-bg);
+    --color-titlebar-title-bg: var(--titlebar-title-bg);
+    --color-titlebar-border: var(--titlebar-border);
+    --color-iconbar-bg: var(--iconbar-bg);
+    --color-iconbar-highlight: var(--iconbar-highlight);
+    --color-iconbar-dimmed: var(--iconbar-dimmed);
+    --color-statusbar-bg: var(--statusbar-bg);
+    --color-sidebar-bg: var(--sidebar-bg);
+    --color-sidebar-title-bg: var(--sidebar-title-bg);
+    --color-statusbar-text: var(--statusbar-text);
+    --color-statusbar-highlight: var(--statusbar-highlight);
+    --color-statusbar-hover: var(--statusbar-hover);
+}
+
+@layer base {
+    .quiet-light {
+        --editor-bg: #f5f5f5;
+        --titlebar-bg: #c4b7d7;
+        --titlebar-border: #a49ab4;
+        --titlebar-title-bg: #baaecc;
+        --iconbar-bg: #ededf5;
+        --iconbar-highlight: #705697;
+        --iconbar-dimmed: #baafce;
+        --statusbar-bg: #705697;
+        --sidebar-bg: #f2f2f2;
+        --sidebar-title-bg: #ede8ef;
+        --statusbar-text: #ffffff;
+        --statusbar-highlight: #64547b;
+        --statusbar-hover: #816ba4;
+    }
+}
