@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "codeart.online",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,6 +9,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.12.7"
+    "@tailwindcss/vite": "^4.1.11",
+    "astro": "^5.12.7",
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@iconify-json/tabler": "^1.2.20",
+    "astro-icon": "^1.1.5"
   }
 }
