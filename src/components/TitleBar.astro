@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props as Props;
+---
+
+<div class="h-10 bg-titlebar-bg flex items-stretch px-2 text-sm">
+    <div class="flex-1/4 flex items-center gap-1">
+        <img src="/favicon.png" alt="logo" class="h-8" />
+        <h1 class="text-xl font-semibold">CodeArt.Online - WoofZJ's Blog</h1>
+    </div>
+    <div class="flex-1/2 flex items-center gap-2 justify-center">
+        <div class="flex gap-1 text-icon-highlight">
+            <Icon name="tabler:arrow-left" size="20" />
+            <Icon name="tabler:arrow-right" size="20" />
+        </div>
+        <div
+            class="grow max-w-xl bg-titlebar-title-bg border border-titlebar-border rounded-xl h-7 flex items-center justify-center text-nowrap"
+        >
+            <span class="text-sm">
+                {title} | CodeArt.Online
+            </span>
+        </div>
+    </div>
+    <div class="flex-1/4"></div>
+</div>
