@@ -13,7 +13,7 @@ interface Props {
 const { title = "首页", route = "/", header = "首页" } = Astro.props as Props;
 ---
 
-<html lang="en" class="quiet-light">
+<html lang="zh" class="quiet-light">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/png" href="/favicon.png" />
@@ -26,13 +26,15 @@ const { title = "首页", route = "/", header = "首页" } = Astro.props as Prop
             class="container mx-auto rounded-xl h-full shadow-lg flex flex-col overflow-clip bg-editor-bg"
         >
             <TitleBar title={title} />
-            <div class="grow flex items-stretch">
+            <div class="flex grow items-stretch overflow-hidden">
                 <IconBar route={route} />
                 <div class="w-xs bg-sidebar-bg flex flex-col items-stretch">
-                    <div class="h-8 flex items-center px-2">
+                    <div class="h-8 flex items-center px-2 flex-shrink-0">
                         <span class="font-semibold">{header}</span>
                     </div>
-                    <slot name="sidebar" />
+                    <div class="relative grow overflow-y-auto">
+                        <slot name="sidebar" />
+                    </div>
                 </div>
             </div>
             <StatusBar />
