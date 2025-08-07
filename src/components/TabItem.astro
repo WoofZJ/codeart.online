@@ -1,0 +1,79 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    title: string;
+    icon: string;
+}
+
+const { title, icon } = Astro.props as Props;
+const uuid = crypto.randomUUID();
+---
+
+<div class="tabitem-wrapper" data-uuid={uuid} style="display: none;">
+    <div
+        class="tabitem-title flex items-center gap-1 px-4 bg-tab-title-bg cursor-pointer"
+    >
+        <Icon name={icon} size="16" />
+        {title}
+        <Icon
+            class="chevron transition-transform"
+            name="tabler:chevron-right"
+            size="16"
+        />
+    </div>
+</div>
+
+<div class="tabitem-content hidden p-4" data-uuid={uuid}>
+    <slot />
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const tabTitleBar = document.getElementById("tab-title-bar");
+        const tabWrappers = document.querySelectorAll(".tabitem-wrapper");
+        tabWrappers.forEach((wrapper, _) => {
+            const uuid = wrapper.getAttribute("data-uuid");
+            const tabTitle = wrapper.querySelector(".tabitem-title");
+            const tabContent = document.querySelector(
+                `.tabitem-content[data-uuid="${uuid}"]`,
+            );
+            if (tabTitleBar && tabTitle) {
+                tabTitleBar.appendChild(tabTitle);
+                tabTitle.addEventListener("click", () => {
+                    document
+                        .querySelectorAll(".tabitem-title")
+                        .forEach((title) => {
+                            if (title !== tabTitle) {
+                                title.classList.remove("bg-editor-bg");
+                                title.classList.add("bg-tab-title-bg");
+                                title
+                                    .querySelector(".chevron")
+                                    ?.classList.remove("rotate-90");
+                            } else {
+                                title.classList.remove("bg-tab-title-bg");
+                                title.classList.add("bg-editor-bg");
+                                title
+                                    .querySelector(".chevron")
+                                    ?.classList.add("rotate-90");
+                            }
+                        });
+                    document
+                        .querySelectorAll(".tabitem-content")
+                        .forEach((content) => {
+                            if (content !== tabContent) {
+                                content.classList.add("hidden");
+                            } else {
+                                content.classList.remove("hidden");
+                            }
+                        });
+                });
+            }
+            wrapper.remove();
+        });
+        const firstTabTitle = tabTitleBar?.querySelector(".tabitem-title");
+        if (firstTabTitle) {
+            (firstTabTitle as HTMLElement).click();
+        }
+    });
+</script>
