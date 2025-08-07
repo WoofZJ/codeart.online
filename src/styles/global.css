@@ -15,6 +15,7 @@
     --color-statusbar-text: var(--statusbar-text);
     --color-statusbar-highlight: var(--statusbar-highlight);
     --color-statusbar-hover: var(--statusbar-hover);
+    --color-tab-title-bg: var(--tab-title-bg);
 }
 
 @layer base {
@@ -32,5 +33,10 @@
         --statusbar-text: #ffffff;
         --statusbar-highlight: #64547b;
         --statusbar-hover: #816ba4;
+        --tab-title-bg: #ececec;
     }
+}
+
+:root {
+    interpolate-size: allow-keywords;
 }
