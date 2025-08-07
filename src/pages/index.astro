@@ -1,17 +1,24 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import SidebarItem from '../components/SidebarItem.astro';
+import RecommendedPost from '../components/Tabs/RecommendedPost.astro';
 ---
 
 <MainLayout title="首页" route="/" header="首页 - 热烈欢迎！">
     <Fragment slot="sidebar">
-        <SidebarItem title="本站公告">
+        <SidebarItem title="本站公告" index={0}>
             <div class="py-2 flex flex-col gap-6 items-center">
                 <div class="bg-red-400 h-40 w-40 mask mask-heart animate-bounce mt-10"></div>
                 <p class="text-center">🚧博客施工中🚧<br/>敬请期待</p>
             </div>
         </SidebarItem>
-        <SidebarItem title="博客数据">
+        <SidebarItem title="博客数据" index={1}>
         </SidebarItem>
+    </Fragment>
+    <Fragment slot="tabs">
+        <RecommendedPost />
+        <RecommendedPost />
+        <RecommendedPost />
+        <RecommendedPost />
     </Fragment>
 </MainLayout>
