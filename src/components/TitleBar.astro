@@ -8,23 +8,23 @@ interface Props {
 const { title } = Astro.props as Props;
 ---
 
-<div class="h-10 bg-titlebar-bg flex items-stretch px-2 text-sm shrink-0">
-    <div class="flex-1/4 flex items-center gap-1">
+<div class="hidden h-10 bg-titlebar-bg lg:flex items-stretch px-2 text-sm shrink-0 justify-center gap-2">
+    <div class="flex lg:flex-1/4 items-center gap-1">
         <img src="/favicon.png" alt="logo" class="h-8" />
-        <h1 class="text-xl font-semibold">CodeArt.Online - WoofZJ's Blog</h1>
+        <h1 class="hidden lg:block text-xl font-semibold">CodeArt.Online - WoofZJ's Blog</h1>
     </div>
-    <div class="flex-1/2 flex items-center gap-2 justify-center">
-        <div class="flex gap-1 text-icon-highlight">
+    <div class="flex-1/2 max-w-xl flex items-center gap-2 justify-center">
+        <div class="hidden lg:flex gap-1 text-icon-highlight">
             <Icon name="tabler:arrow-left" size="20" />
             <Icon name="tabler:arrow-right" size="20" />
         </div>
         <div
-            class="grow max-w-xl bg-titlebar-title-bg border border-titlebar-border rounded-xl h-7 flex items-center justify-center text-nowrap"
+            class="grow bg-titlebar-title-bg border border-titlebar-border rounded-lg h-7 flex items-center justify-center text-nowrap"
         >
             <span class="text-sm">
                 {title} | CodeArt.Online
             </span>
         </div>
     </div>
-    <div class="flex-1/4"></div>
+    <div class="hidden xl:flex xl:flex-1/4"></div>
 </div>

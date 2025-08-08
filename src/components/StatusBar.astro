@@ -26,15 +26,21 @@ const buildTime = new Date().toLocaleString("zh-CN", {
 });
 ---
 
-<div class="h-6 bg-statusbar-bg flex items-center text-statusbar-text text-sm shrink-0">
+<div
+    class="h-6 bg-statusbar-bg flex items-center text-statusbar-text text-sm shrink-0"
+>
     <a
         href="/timeline"
         class="bg-statusbar-highlight hover:bg-statusbar-hover px-2 flex items-center"
     >
         <Icon name="tabler:git-fork" size="16" />
-        v{version} (built at {buildTime})
+        v{version}
+        <span class="hidden lg:block">
+            (built at {buildTime})
+        </span>
     </a>
-    <span class="px-2"> © 2025 WoofZJ. All rights reserved. </span>
+    <span class="px-2"> © 2025 WoofZJ.</span>
+    <span class="hidden lg:block">All rights reserved. </span>
     <div class="ml-auto flex flex-row items-stretch self-stretch">
         {
             socialLinks.map((link) => (
@@ -48,12 +54,12 @@ const buildTime = new Date().toLocaleString("zh-CN", {
             ))
         }
     </div>
-    <a class="px-2 hover:bg-statusbar-hover">
-        <span>Site view: --</span>
-        <span>(today: --)</span>
+    <a class="flex items-center gap-1 px-1 hover:bg-statusbar-hover">
+        <Icon name="tabler:eye" size="16" />
+        <span class="font-semibold">123k</span>
     </a>
-    <a class="px-2 hover:bg-statusbar-hover">
-        <span>Visitor: --</span>
-        <span>(today: --)</span>
+    <a class="flex items-center gap-1 px-1 hover:bg-statusbar-hover">
+        <Icon name="tabler:man" size="16" />
+        <span class="font-semibold">123k</span>
     </a>
 </div>
