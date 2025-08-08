@@ -21,9 +21,9 @@ const { title = "首页", route = "/", header = "首页" } = Astro.props as Prop
         <meta name="generator" content={Astro.generator} />
         <title>{title} | CodeArt.Online</title>
     </head>
-    <body class="h-dvh lg:py-4 flex flex-col">
+    <body class="h-dvh lg:py-4 lg:px-8 flex flex-col">
         <div
-            class="w-full grow lg:container mx-auto rounded-xl h-full shadow-lg flex flex-col overflow-clip bg-editor-bg"
+            class="w-full rounded-xl mx-auto h-full shadow-lg flex flex-col overflow-clip bg-editor-bg max-w-[96rem]"
         >
             <TitleBar title={title} />
             <div
@@ -31,7 +31,7 @@ const { title = "首页", route = "/", header = "首页" } = Astro.props as Prop
             >
                 <IconBar route={route} />
                 <div
-                    class="hidden lg:w-2xs xl:w-xs bg-sidebar-bg lg:flex flex-col items-stretch"
+                    class="hidden lg:w-3xs xl:w-2xs bg-sidebar-bg lg:flex flex-col items-stretch"
                 >
                     <div class="h-8 flex items-center px-2 flex-shrink-0">
                         <span class="font-semibold">{header}</span>
