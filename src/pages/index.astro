@@ -1,16 +1,24 @@
 ---
-
+import MainLayout from "../layouts/MainLayout.astro";
+import Tab from "../components/Tab.astro";
+import SideBarItem from "../components/SideBarItem.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="首页 | CodeArt.Online" route="/" sidebarTitle="首页">
+    <Fragment slot="sidebar-item">
+        <SideBarItem title="本站公告">
+            <div class="py-10 flex flex-col items-center text-center">
+                🚧网站建设中🚧<br/>
+                敬请期待
+            </div>
+        </SideBarItem>
+        <SideBarItem title="社交链接">
+        </SideBarItem>
+        <SideBarItem title="技术栈">
+        </SideBarItem>
+    </Fragment>
+    <Fragment slot="tab">
+        <Tab title="欢迎" icon="tabler:michelin-star-green">
+        </Tab>
+    </Fragment>
+</MainLayout>
