@@ -1,0 +1,21 @@
+---
+interface Props {
+    title: string;
+}
+const { title } = Astro.props;
+---
+
+<div class="w-full h-10 flex items-center justify-between px-2 bg-titlebar-bg">
+    <div class="flex-1/4 flex items-center gap-2">
+        <img src="/favicon.png" alt="logo" class="h-8" />
+        <span class="text-xl font-semibold">CodeArt.Online - WoofZJ's Blog</span>
+    </div>
+    <div class="flex-1/2 flex items-center gap-2 justify-center">
+        <div
+            class="hidden md:flex md:w-xl items-center gap-2 px-2 py-1 rounded border"
+        >
+            <span class="w-full text-center text-sm">{title}</span>
+        </div>
+    </div>
+    <div class="flex-1/4 flex items-center justify-end">Theme: Quiet Light</div>
+</div>
