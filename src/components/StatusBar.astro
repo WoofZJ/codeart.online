@@ -1,0 +1,56 @@
+---
+import { version } from "../../package.json";
+import { Icon } from "astro-icon/components";
+
+const builtAt = new Date().toISOString().replace("T", " ").substring(0, 19);
+---
+
+<footer
+    class="h-6 pr-2 flex items-center text-sm bg-statusbar-bg text-statusbar-text"
+>
+    <a
+        href="/timeline"
+        class="flex items-center px-2 bg-statusbar-highlight-bg hover:bg-statusbar-hover-bg"
+    >
+        <Icon name="tabler:git-fork" size="16" />
+        <span>v{version} (构建于 {builtAt})</span>
+    </a>
+    <div class="px-2">&copy; 2025 WoofZJ. All rights reserved.</div>
+    <div class="ml-auto flex">
+        <a
+            href="/archive"
+            class="px-2 flex items-center gap-1 hover:bg-statusbar-hover-bg"
+        >
+            <Icon name="tabler:article" size="16" />
+            文章 0
+        </a>
+        <a
+            href="/tag"
+            class="px-2 flex items-center gap-1 hover:bg-statusbar-hover-bg"
+        >
+            <Icon name="tabler:tag" size="16" />
+            标签 0
+        </a>
+        <a
+            href="message"
+            class="px-2 flex items-center gap-1 hover:bg-statusbar-hover-bg"
+        >
+            <Icon name="tabler:message" size="16" />
+            留言 0
+        </a>
+    </div>
+    <a href="statistics" class="flex px-2 gap-2 hover:bg-statusbar-hover-bg">
+        <div class="flex items-center gap-1">
+            <Icon name="tabler:pacman" size="16" />
+            当前在线 0
+        </div>
+        <div class="flex items-center gap-1">
+            <Icon name="tabler:eye" size="16" />
+            今日PV 0
+        </div>
+        <div class="flex items-center gap-1">
+            <Icon name="tabler:chart-histogram" size="16" />
+            总PV 0
+        </div>
+    </a>
+</footer>
