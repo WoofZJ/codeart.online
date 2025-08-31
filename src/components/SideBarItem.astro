@@ -1,0 +1,19 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div>
+    <div
+        class="h-6 px-1 text-sm font-semibold flex items-center gap-1 sticky top-0 bg-sidebar-section-title-bg"
+    >
+        <Icon name="tabler:chevron-down" size="16" />
+        <span>{title}</span>
+    </div>
+    <slot />
+</div>
