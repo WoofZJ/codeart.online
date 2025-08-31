@@ -1,1 +1,51 @@
 @import "tailwindcss";
+
+@theme inline {
+    /* editor color */
+    --color-editor-bg: var(--editor-bg);
+    --color-editor-text: var(--editor-text);
+    /* titlebar color */
+    --color-titlebar-bg: var(--titlebar-bg);
+    --color-titlebar-text: var(--titlebar-text);
+    /* iconbar color */
+    --color-iconbar-bg: var(--iconbar-bg);
+    --color-iconbar-icon-active: var(--iconbar-icon-active);
+    --color-iconbar-icon-inactive: var(--iconbar-icon-inactive);
+    /* sidebar color */
+    --color-sidebar-bg: var(--sidebar-bg);
+    --color-sidebar-text: var(--sidebar-text);
+    --color-sidebar-section-title-bg: var(--sidebar-section-title-bg);
+    /* tab color */
+    --color-tab-title-bg: var(--tab-title-bg);
+    --color-tab-titlebar-bg: var(--tab-titlebar-bg);
+    /* statusbar color */
+    --color-statusbar-bg: var(--statusbar-bg);
+    --color-statusbar-text: var(--statusbar-text);
+    --color-statusbar-highlight-bg: var(--statusbar-highlight-bg);
+    --color-statusbar-hover-bg: var(--statusbar-hover-bg);
+}
+
+@layer base {
+    .quiet-light {
+        /* editor color */
+        --editor-bg: #f5f5f5;
+        --editor-text: #333333;
+        /* titlebar color */
+        --titlebar-bg: #c4b7d7;
+        /* iconbar color */
+        --iconbar-bg: #ededf5;
+        --iconbar-icon-active: #705697;
+        --iconbar-icon-inactive: #baafce;
+        /* sidebar color */
+        --sidebar-bg: #f2f2f2;
+        --sidebar-section-title-bg: #ede8ef;
+        /* tab color */
+        --tab-title-bg: #f5f5f5;
+        --tab-titlebar-bg: #ececec;
+        /* statusbar color */
+        --statusbar-bg: #705697;
+        --statusbar-text: #ffffff;
+        --statusbar-highlight-bg: #64547b;
+        --statusbar-hover-bg: #816ba4;
+    }
+}
